@@ -1,0 +1,23 @@
+//Given an array of integers.
+//Return an array, where the first element is the count of positives numbers and the second element is sum of negative numbers. 0 is neither positive nor negative.
+//If the input is an empty array or is null, return an empty array.
+
+List<int> countPositivesSumNegatives(List<int>? input) {
+  if (input == null || input.isEmpty) {
+    return [];
+  }
+
+  int positiveCount = 0;
+  int negativeSum = 0;
+
+  for (var number in input) {
+    if (number > 0) {
+      positiveCount++;
+    } else if (number < 0) {
+      negativeSum += number;
+    }
+  }
+
+  return [positiveCount, negativeSum];
+  
+}
